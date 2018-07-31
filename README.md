@@ -1,10 +1,10 @@
-Jubjub supporting evidence
+baby\_Jubjub supporting evidence
 --------------------------
 
 This repository contains supporting evidence that the twisted Edwards curve
--x^2 + y^2 = 1 - (10240/10241).x^2.y^2 of rational points over
-GF(52435875175126190479447740508185965837690552500527637822603658699938581184513),
-[also called "Jubjub"](https://z.cash/technology/jubjub.html),
+168700.x^2 + y^2 = 1 + 168696.x^2.y^2 of rational points over
+GF(21888242871839275222246405745257275088548364400416034343698204186575808495617),
+also called babyJubJub based upone ["Jubjub"](https://z.cash/technology/jubjub.html),
 satisfies the [SafeCurves criteria](https://safecurves.cr.yp.to/index.html).
 
 The script ``verify.sage`` is based on
@@ -24,5 +24,9 @@ Prerequisites:
 * pip install sortedcontainers
 
 Run ``sage verify.sage .``, or ``./run.sh`` to also print out the results.
+
+You can generate the curve by running `sage findCurve.sage 168698`
+This is the lowest A=168698 of a montgomary curve that statifies the 
+critieria defined in [ref7748](https://tools.ietf.org/html/rfc7748)
 
 Note that the "rigidity" criterion cannot be checked automatically.
