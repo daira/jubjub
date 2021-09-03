@@ -21,7 +21,7 @@ modified
 Prerequisites:
 
 * apt-get install sagemath
-* pip install sortedcontainers
+* sage --pip install sortedcontainers
 
 Run ``sage verify.sage .``, or ``./run.sh`` to also print out the results.
 

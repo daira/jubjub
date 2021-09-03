@@ -52,7 +52,7 @@ def verify():
 
   try:
     s = set(map(Integer, readfile('primes').split()))
-  except IOError, e:
+  except IOError as e:
     if e.errno != ENOENT: raise
     s = set()
 
@@ -201,7 +201,7 @@ def verify_pass(V, needtofactor):
     for v in V:
       while d % v == 0:
         d //= v
-	f *= factor(v)
+        f *= factor(v)
     writefile('verify-cofactor','%s\n' % f)
   else:
     writefile('verify-trace','Unverified\n')
@@ -259,7 +259,7 @@ def verify_pass(V, needtofactor):
     for v in V:
       while d % v == 0:
         d //= v
-	f *= factor(v)
+        f *= factor(v)
     writefile('verify-twistcofactor','%s\n' % f)
     gcdtwistlpis1 = gcd(twistl,p) == 1
     safetwist &= requirement('verify-gcdtwistlp1',gcdtwistlpis1)
@@ -298,8 +298,8 @@ def verify_pass(V, needtofactor):
         # best case for attack: cyclic; each power is usable
 	# also assume that kangaroo is as efficient as rho
         if v + sqrt(pi4*joint/v) < sqrt(pi4*joint):
-	  precomp += v
-	  joint /= v
+          precomp += v
+          joint /= v
         
     rho = log(precomp + sqrt(pi4 * joint))/log(2)
     writefile('verify-jointrho','%.1f\n' % rho)
